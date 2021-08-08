@@ -1,0 +1,31 @@
+extends layout/main-layouts.pug
+
+block navbar
+    li.nav-item.mr-5
+        a.nav-link(aria-current='page' href='/') list peminjam
+    li.nav-item
+        a.nav-link(href='/admin/data-pinjaman') input data
+    li.nav-item
+        a.nav-link.active(href='/admin/data-pengembalianBuku') Pengembalian Buku
+
+block content 
+    br
+    br 
+    .container
+        .row.justify-content-center
+            .col-lg-5.col-sm-7
+                h1.data.center Form Pengembalian Pinjaman Buku
+    br
+    br
+    br
+    .wadah
+        form(action='/admin/datas' method='POST')
+            .mb-3
+                label.form-label(for='email') Email 
+                input#email.form-control(type='email' name='email-peminjam' placeholder='Masukan Email' required='')
+            .mb-3
+                label.form-label(for='telp') Nomor Handphone
+                input#telp.form-control(type='number' min='0' name='telp-peminjam' placeholder='Masukan No' required='')
+            button.btn.btn-primary(type='submit') Submit
+
+

@@ -1,0 +1,48 @@
+extends layout/main-layouts.pug
+
+block navbar
+    li.nav-item.mr-5
+        a.nav-link.active(aria-current='page' href='/') list peminjam
+    li.nav-item
+        a.nav-link(href='/admin/data-pinjaman') input data
+    li.nav-item
+        a.nav-link(href='/admin/data-pengembalianBuku') Pengembalian Buku
+
+block content 
+
+    //- if dataBook.length > databuku2.length - 1 
+    //-     .alert.alert-success.alert-dismissible.fade.show(role='alert')
+    //-         strong Holy guacamole!
+    //-             |  You should check in on some of those
+    //-             |       fields below.
+    //-         button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+
+    br
+    if dataBook.length > 0
+        h1.judullist  Daftar List Peminjam Buku
+        br
+        table.table.table-dark.table-hover
+            thead
+                tr.judul
+                    th(scope='col') Nama Peminjam
+                    th(scope='col') E-mail
+                    th(scope='col') Buku
+                    th(scope='col') No Hp
+                    th(scope='col') Tanggal Peminjaman
+                    th(scope='col') Tanggal Pengembalian
+
+            tbody
+                each datas in dataBook
+                    tr
+                        td.uper #{datas.nama}
+                        td #{datas.eMail}
+                        td.uper #{datas.buku}
+                        td #{datas.noHp}
+                        td #{datas.tanngalPinjam}
+                        td #{datas.tanngalbalikin}
+                            
+    else
+        h2 Tidak ada data 
+
+
+
