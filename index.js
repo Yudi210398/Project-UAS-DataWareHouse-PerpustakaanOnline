@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+require("core-js/stable");
+require("regenerator-runtime");
 const mainPages = require("./routers/mainPages.js");
 const pinjaman = require("./routers/pinjaman.js");
 const pengembalian = require("./routers/pengembalianBuku.js");

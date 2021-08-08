@@ -1,5 +1,4 @@
 const fs = require("fs");
-
 function savenotess(note) {
   const noteSSs = JSON.stringify(note);
   return fs.writeFileSync("notes.json", noteSSs);
